@@ -9,7 +9,11 @@
 h1{
     text-align: center;
     font-size: 2rem;
-    font-family: 'AmsterdamFor';}
+    font-family: 'AmsterdamFor';
+    animation: introanim 1s ease-in-out;
+
+}
+
 h3{
     text-align: center;
 }
@@ -34,6 +38,9 @@ h5{
     padding: 15px 0 0 0;
     font-weight: 100;
     letter-spacing: 5px;
+    order: 25px;
+    z-index: 1;
+    background-color:#CAEB44 ;
 }
 .intro a{
     text-decoration: none;
@@ -107,15 +114,12 @@ nav{
     height: 100%;
     background-color: rgba(0, 0, 0, 0); /* Başlangıçta görünmez */
     transition: background-color 0.3s ease; /* Animasyon efekti */
+
 }
 
 .image-container:hover .overlay {
     background-color: rgba(0, 0, 0, 0.5); /* Hover durumunda görünür hale getir */
 }
-
-
-
-
 .including{
     margin: 45px;
 }
@@ -124,7 +128,7 @@ nav{
     position: absolute;
     color: #333;
 }
-.including>img{
+.including img{
     height: 350px;
     width: 450px;
 
@@ -157,56 +161,6 @@ nav{
 .villa1>img{
     height: 300px;
     width: 350px;
-    object-fit: cover;
-}
-.slider-container {
-    width: 70%;
-    overflow: hidden;
-    margin: 100px auto 10px;
-}
-.slider {
-    display: flex;
-}
-
-.slide {
-    flex: 0 0 100%;
-    box-sizing: border-box;
-    padding: 10px;
-}
-.slider-dots {
-    text-align: center;
-    margin-top: 10px;
-}
-.dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #bbb;
-    margin: 0 5px 25px;
-    cursor: pointer;
-}
-.dot.active {
-    background-color: #333;
-}
-@keyframes slideAnimation {
-    0%, 20% { transform: translateX(0%); }
-    25%, 45% { transform: translateX(-100%); }
-    50%, 70% { transform: translateX(-200%); }
-    75%, 95% { transform: translateX(0%); }
-}
-
-.slider:hover .slide {
-    animation: slideAnimation 15s ease-in-out 5 forwards;
-    animation-play-state: paused;
-}
-.slider:hover:hover .slide {
-    animation-play-state: running;
-}
-
-.slide>img{
-    height:35rem;
-    width:100%;
     object-fit: cover;
 }
 div>h3{
@@ -244,6 +198,15 @@ input[type="date"]{
 .footer>h4{
     border-top: 1px solid gray;
     padding-top:25px ;
+}
+/*villa alt başlıkları*/
+.villa-img-container{
+    text-align: center;
+}
+.villa-img img{
+    margin:25px 0;
+    width: 950px;
+    height: 650px;
 }
 @media(max-width:1190px){
     .intro img{
@@ -330,27 +293,51 @@ input[type="date"]{
 @media(max-width:442px){ 
     .intro img{
         height: 40px;
-        margin-top: 55px;
+        margin-top: 2px;
     }
+    .intro{
+        height: 3rem;
+    }
+
     .intro>h1{
-        padding: 45px 0 20px 0;
+        padding: 0 0 15px 0;
         font-weight: 50;
         letter-spacing: 2px;
         font-size: 0.8rem;
-    }    
-    header{
-        width: 100%;
-    }
-    .demo img{
-        height: 300px;
-        width: 350px;
-        object-fit: cover;
-        border: 5px solid lightblue;
-        margin:5px 5px 0 0;
-    }
+    }   
     a{
         font-size: 0.4rem;
     }
+    .intro>h4{
+        font-size: 0.2rem;
+    } 
+    header{
+        width: 100%;
+        height: 35px;
+    }
+    .nav-links>li{
+        margin: 5px 15px 0 0;
+        list-style: none;
+
+    }
+    .nav-links a{
+        text-decoration: none;
+        font-size: 0.8rem;
+    }
+    .flex img{
+        height: 170px;
+        width: 215px;
+    }
 }
 
-
+@keyframes introanim{
+    0%{
+        letter-spacing: 2px;
+    }
+    50%{
+        letter-spacing: 1rem;
+    }
+    100%{
+        letter-spacing: 2px;
+    }
+}
